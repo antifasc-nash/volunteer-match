@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect with Local Organizations - UVOTN</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .header h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .header p {
+            color: #7f8c8d;
+            font-size: 18px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #34495e;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+            color: #555;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+        }
+        .results {
+            display: none;
+            margin-top: 30px;
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .results h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .org-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .org-name {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 1.2em;
+        }
+        .org-tags {
+            font-style: italic;
+            color: #7f8c8d;
+        }
+        .org-contact {
+            color: #34495e;
+            margin-top: 5px;
+        }
+        .notice {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f39c12;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Find Your People. Take Action.</h1>
+            <p>Tell us a little about yourself, and we'll match you with organizations that are doing work you care about.</p>
+        </div>
+        
+        <form id="volunteerForm" action="https://script.google.com/macros/s/AKfycbxqDx5xoajLbj3BRfIEEe_LAEuA9v9NUYa2oYjH4g8PnC7bP9ZluvwGpMb0_yFLXDM6ig/exec" method="POST" target="hidden_iframe">
+            
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone Number (Optional)</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="zipcode">Zip Code</label>
+                <input type="text" id="zipcode" name="zipcode" required pattern="[0-9]{5}">
+            </div>
+            
+            <div class="form-group">
+                <label for="interests">What are your interests? (e.g., environmental justice, racial equity, food access)</label>
+                <textarea id="interests" name="interests" rows="4" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="skills">What skills can you offer? (e.g., event planning, graphic design, community organizing)</label>
+                <textarea id="skills" name="skills" rows="4"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="timeCommitment">Time commitment you're looking for:</label>
+                <select id="timeCommitment" name="timeCommitment">
+                    <option value="one-off">One-off event</option>
+                    <option value="several_hours_week">Several hours per week</option>
+                    <option value="several_hours_month">Several hours per month</option>
+                    <option value="flexible">Flexible</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="transportation">Do you have reliable transportation?</label>
+                <select id="transportation" name="transportation">
+                    <option value="yes_car">Yes, I have a car</option>
+                    <option value="public_transit">Yes, I rely on public transit</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="civilDisobedience">Are you open to being contacted about direct action / civil disobedience?</label>
+                <select id="civilDisobedience" name="civilDisobedience">
+                    <option value="not_interested">Not interested</option>
+                    <option value="want_to_learn">I want to learn more</option>
+                    <option value="ready_risk_aware">Ready to take risks (civil disobedience)</option>
+                    <option value="experienced_committed">I am experienced and committed</option>
+                </select>
+            </div>
+            
+            <input type="submit" value="Find My Matches">
+        </form>
+
+        <div id="loading" class="loading">
+            <p>Finding the perfect organizations for you...</p>
+        </div>
+
+        <div id="results" class="results">
+            <h2>Your Top Matches</h2>
+            <div id="organizationList">
+                </div>
+        </div>
+
+        <div id="civilNotice" class="notice">
+            <p>Thank you for your commitment! A coordinator will be in touch with you directly to discuss opportunities for direct action.</p>
+        </div>
+
+    </div>
+    
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
+
+    <script>
+        const form = document.getElementById('volunteerForm');
+        const loading = document.getElementById('loading');
+        const results = document.getElementById('results');
+        const orgList = document.getElementById('organizationList');
+        const civilNotice = document.getElementById('civilNotice');
+
+        // Listen for the message from the Apps Script iframe
+        window.addEventListener('message', function(event) {
+            // Check that the message is from the correct origin and contains data
+            if (event.origin === "https://script.google.com" && event.data) {
+                const result = event.data;
+
+                loading.style.display = 'none';
+                orgList.innerHTML = '';
+                results.style.display = 'block';
+
+                if (result.recommendations && result.recommendations.length > 0) {
+                    result.recommendations.forEach(org => {
+                        const orgCard = document.createElement('div');
+                        orgCard.className = 'org-card';
+                        orgCard.innerHTML = `
+                            <div class="org-name">${org[0]}</div>
+                            <div class="org-tags">Tags: ${org[6]}</div>
+                            <div class="org-contact">Contact: ${org[1] || org[2] || 'N/A'}</div>
+                        `;
+                        orgList.appendChild(orgCard);
+                    });
+
+                    if (result.needsSpecialAttention) {
+                        civilNotice.style.display = 'block';
+                    }
+                } else {
+                    alert('No matching organizations found.');
+                }
+            }
+        });
+
+        form.addEventListener('submit', function() {
+            results.style.display = 'none';
+            civilNotice.style.display = 'none';
+            loading.style.display = 'block';
+        });
+
+    </script>
+</body>
+</html>
