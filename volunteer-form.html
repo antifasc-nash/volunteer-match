@@ -124,9 +124,7 @@
             <p>Tell us a little about yourself, and we'll match you with organizations that are doing work you care about.</p>
         </div>
         
-        <form id="volunteerForm" action="https://script.google.com/macros/s/AKfycbzpdqOTCxWWM1HDTqkSXJB5XOToHtmFX5hqFOuR-dTRsWia1_IB08wK-fDY7O6lIH_wUw/exec" method="POST" target="_blank">
-  <!-- All your form fields here -->
-        </form>
+        <form id="volunteerForm">
             
             <div class="form-group">
                 <label for="name">Full Name</label>
@@ -161,19 +159,28 @@
             <div class="form-group">
                 <label for="timeCommitment">Time commitment you're looking for:</label>
                 <select id="timeCommitment" name="timeCommitment">
-                    <option value="one-off">One-off events every month or so</option>
-                    <option value="several_hours_week">A few hours per month</option>
-                    <option value="several_hours_month">A few hours per week</option>
-                    <option value="flexible">I want to get deeply involved (5-10 hours/week)</option>
+                    <option value="one-off">One-off event</option>
+                    <option value="several_hours_week">Several hours per week</option>
+                    <option value="several_hours_month">Several hours per month</option>
+                    <option value="flexible">Flexible</option>
                 </select>
             </div>
             
             <div class="form-group">
-                <label for="civilDisobedience">How comfortable are you with alternative protest methods (i.e. nonviolent direct action)?</label>
+                <label for="transportation">Do you have reliable transportation?</label>
+                <select id="transportation" name="transportation">
+                    <option value="yes_car">Yes, I have a car</option>
+                    <option value="public_transit">Yes, I rely on public transit</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="civilDisobedience">Are you open to being contacted about direct action / civil disobedience?</label>
                 <select id="civilDisobedience" name="civilDisobedience">
                     <option value="not_interested">Not interested</option>
                     <option value="want_to_learn">I want to learn more</option>
-                    <option value="ready_risk_aware">I want to join direct actions</option>
+                    <option value="ready_risk_aware">Ready to take risks (civil disobedience)</option>
                     <option value="experienced_committed">I am experienced and committed</option>
                 </select>
             </div>
@@ -188,7 +195,8 @@
         <div id="results" class="results">
             <h2>Your Top Matches</h2>
             <div id="organizationList">
-                </div>
+                <!-- Organizations will be dynamically inserted here -->
+            </div>
         </div>
 
         <div id="civilNotice" class="notice">
@@ -201,36 +209,47 @@
         document.getElementById('volunteerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Clear previous results and show loading indicator
+            // Show loading indicator and hide previous results
             document.getElementById('results').style.display = 'none';
+            document.getElementById('civilNotice').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
 
-            // Get user's interests from the form
-            const interestsInput = document.getElementById('interests').value.toLowerCase();
-            const volunteerTags = [];
-            if (interestsInput.includes('environment') || interestsInput.includes('climate') || interestsInput.includes('conservation')  || interestsInput.includes('wildlife') || interestsInput.includes('sustainability')) volunteerTags.push('environmental_justice');
-            if (interestsInput.includes('food') || interestsInput.includes('hunger') || interestsInput.includes('eat') || interestsInput.includes('starvation') || interestsInput.includes('healthy')) volunteerTags.push('food_access');
-            if (interestsInput.includes('immigrant') || interestsInput.includes('refugee') || interestsInput.includes('immigration') || interestsInput.includes('ICE') || interestsInput.includes('deportation') || interestsInput.includes('hispanic') || interestsInput.includes('Spanish') || interestsInput.includes('human rights') || interestsInput.includes('deport') || interestsInput.includes('migrant')) volunteerTags.push('immigrant_rights');
-            if (interestsInput.includes('racial') || interestsInput.includes('racism') || interestsInput.includes('equity') || interestsInput.includes('discrimination') || interestsInput.includes('police') || interestsInput.includes('race')) volunteerTags.push('racial_justice');
-            if (interestsInput.includes('health') || interestsInput.includes('medical') || interestsInput.includes('hospital') || interestsInput.includes('healthcare') || interestsInput.includes('doctor') || interestsInput.includes('health center') || interestsInput.includes('healthy') || interestsInput.includes('medicine')) volunteerTags.push('healthcare');
-            if (interestsInput.includes('electoral') || interestsInput.includes('vote') || interestsInput.includes('District 7') || interestsInput.includes('politics') || interestsInput.includes('politician') || interestsInput.includes('campaign') || interestsInput.includes('election') || interestsInput.includes('canvass') || interestsInput.includes('Congress') || interestsInput.includes('legislator') || interestsInput.includes('legislation') || interestsInput.includes('candidate')) volunteerTags.push('canvassing_electoral');
-            if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organiazing')) volunteerTags.push('labor_organizing');
-            if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('housing_justice');
-            if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('palestine');
+            // IMPORTANT: Replace this URL with your deployed Apps Script URL
+            const appsScriptURL = "YOUR_APPS_SCRIPT_URL_HERE"; 
             
-            // Fetch organizations data from the JSON file
-            const url = 'https://raw.githubusercontent.com/antifasc-nash/volunteer-match/main/organizations.json'; // CHANGE THIS URL
+            // IMPORTANT: Replace this URL with the raw URL to your organizations.json file on GitHub
+            const organizationsDataURL = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/organizations.json";
             
+            // --- Step 1: Submit data to Google Sheet via Apps Script
+            const form = e.target;
+            const formData = new FormData(form);
+            const searchParams = new URLSearchParams(formData);
+
             try {
-                const response = await fetch(url);
+                await fetch(appsScriptURL, {
+                    method: "POST",
+                    body: searchParams
+                });
+
+                // --- Step 2: Fetch and display organization matches
+                const interestsInput = document.getElementById('interests').value.toLowerCase();
+                const volunteerTags = [];
+                if (interestsInput.includes('environmental') || interestsInput.includes('climate')) volunteerTags.push('environmental_justice');
+                if (interestsInput.includes('food') || interestsInput.includes('hunger')) volunteerTags.push('food_access');
+                if (interestsInput.includes('immigrant') || interestsInput.includes('refugee')) volunteerTags.push('immigrant_rights');
+                if (interestsInput.includes('racial') || interestsInput.includes('racism')) volunteerTags.push('racial_justice');
+                if (interestsInput.includes('health') || interestsInput.includes('medical')) volunteerTags.push('healthcare');
+                if (interestsInput.includes('electoral') || interestsInput.includes('vote')) volunteerTags.push('canvassing_electoral');
+                if (interestsInput.includes('labor') || interestsInput.includes('worker')) volunteerTags.push('labor_organizing');
+                if (interestsInput.includes('housing') || interestsInput.includes('homeless')) volunteerTags.push('housing_justice');
+                
+                const response = await fetch(organizationsDataURL);
                 const organizations = await response.json();
 
-                // Find matching organizations based on tags
                 const matches = organizations.filter(org => 
                     org.tags.some(tag => volunteerTags.includes(tag))
                 );
-
-                // Display results
+                
                 document.getElementById('loading').style.display = 'none';
 
                 if (matches.length > 0) {
@@ -248,7 +267,6 @@
                     });
                     document.getElementById('results').style.display = 'block';
 
-                    // Check for civil disobedience selection
                     const civilDisobedience = document.getElementById('civilDisobedience').value;
                     if (civilDisobedience === 'ready_risk_aware' || civilDisobedience === 'experienced_committed') {
                         document.getElementById('civilNotice').style.display = 'block';
@@ -256,14 +274,11 @@
                 } else {
                     alert('No matching organizations found.');
                 }
-
             } catch (error) {
-                console.error("Error fetching or processing data:", error);
-                alert('An error occurred while matching organizations. Please try again later.');
+                console.error("Error submitting form or fetching data:", error);
+                alert('An error occurred. Please check your URLs and try again.');
             }
         });
     </script>
 </body>
 </html>
-
-
