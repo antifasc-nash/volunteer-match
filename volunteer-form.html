@@ -124,7 +124,7 @@
             <p>Tell us a little about yourself, and we'll match you with organizations that are doing work you care about.</p>
         </div>
         
-        <form id="volunteerForm" action="https://script.google.com/macros/s/AKfycbz5RZOkLt4bTN00jnDVW23G1NavCgvLM4U6Qd_ujlGcIXdhJ4dRl86I5wqIDBXs6gyzVw/exec" method="POST" target="hidden_iframe">
+        <form id="volunteerForm">
             
             <div class="form-group">
                 <label for="name">Full Name</label>
@@ -204,53 +204,70 @@
 
     </div>
     
-    <iframe name="hidden_iframe" id="hidden_iframe" style="display: none;"></iframe>
-
     <script>
-        const form = document.getElementById('volunteerForm');
-        const loading = document.getElementById('loading');
-        const results = document.getElementById('results');
-        const orgList = document.getElementById('organizationList');
-        const civilNotice = document.getElementById('civilNotice');
+        document.getElementById('volunteerForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
 
-        // Listen for the message from the Apps Script iframe
-        window.addEventListener('message', function(event) {
-            // Check that the message is from the correct origin and contains data
-            if (event.origin === "https://script.google.com" && event.data) {
-                const result = event.data;
+            // Clear previous results and show loading indicator
+            document.getElementById('results').style.display = 'none';
+            document.getElementById('loading').style.display = 'block';
 
-                loading.style.display = 'none';
-                orgList.innerHTML = '';
-                results.style.display = 'block';
+            // Get user's interests from the form
+            const interestsInput = document.getElementById('interests').value.toLowerCase();
+            const volunteerTags = [];
+            if (interestsInput.includes('environment') || interestsInput.includes('climate')) volunteerTags.push('environmental_justice');
+            if (interestsInput.includes('food') || interestsInput.includes('hunger')) volunteerTags.push('food_access');
+            if (interestsInput.includes('immigrant') || interestsInput.includes('refugee')) volunteerTags.push('immigrant_rights');
+            if (interestsInput.includes('racial') || interestsInput.includes('racism')) volunteerTags.push('racial_justice');
+            if (interestsInput.includes('health') || interestsInput.includes('medical')) volunteerTags.push('healthcare');
+            if (interestsInput.includes('electoral') || interestsInput.includes('vote')) volunteerTags.push('canvassing_electoral');
+            if (interestsInput.includes('labor') || interestsInput.includes('worker')) volunteerTags.push('labor_organizing');
+            if (interestsInput.includes('housing') || interestsInput.includes('homeless')) volunteerTags.push('housing_justice');
+            
+            // Fetch organizations data from the JSON file
+            const url = 'https://raw.githubusercontent.com/antifasc-nash/volunteer-match/main/organizations.json'; // CHANGE THIS URL
+            
+            try {
+                const response = await fetch(url);
+                const organizations = await response.json();
 
-                if (result.recommendations && result.recommendations.length > 0) {
-                    result.recommendations.forEach(org => {
+                // Find matching organizations based on tags
+                const matches = organizations.filter(org => 
+                    org.tags.some(tag => volunteerTags.includes(tag))
+                );
+
+                // Display results
+                document.getElementById('loading').style.display = 'none';
+
+                if (matches.length > 0) {
+                    const orgList = document.getElementById('organizationList');
+                    orgList.innerHTML = '';
+                    matches.forEach(org => {
                         const orgCard = document.createElement('div');
                         orgCard.className = 'org-card';
                         orgCard.innerHTML = `
-                            <div class="org-name">${org[0]}</div>
-                            <div class="org-tags">Tags: ${org[6]}</div>
-                            <div class="org-contact">Contact: ${org[1] || org[2] || 'N/A'}</div>
+                            <div class="org-name">${org.name}</div>
+                            <div class="org-tags">Tags: ${org.tags.join(', ')}</div>
+                            <div class="org-contact">Contact: ${org.email || org.phone || 'N/A'}</div>
                         `;
                         orgList.appendChild(orgCard);
                     });
+                    document.getElementById('results').style.display = 'block';
 
-                    if (result.needsSpecialAttention) {
-                        civilNotice.style.display = 'block';
+                    // Check for civil disobedience selection
+                    const civilDisobedience = document.getElementById('civilDisobedience').value;
+                    if (civilDisobedience === 'ready_risk_aware' || civilDisobedience === 'experienced_committed') {
+                        document.getElementById('civilNotice').style.display = 'block';
                     }
                 } else {
                     alert('No matching organizations found.');
                 }
+
+            } catch (error) {
+                console.error("Error fetching or processing data:", error);
+                alert('An error occurred while matching organizations. Please try again later.');
             }
         });
-
-        form.addEventListener('submit', function() {
-            results.style.display = 'none';
-            civilNotice.style.display = 'none';
-            loading.style.display = 'block';
-        });
-
     </script>
 </body>
-
 </html>
