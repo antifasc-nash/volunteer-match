@@ -214,7 +214,7 @@
             document.getElementById('loading').style.display = 'block';
             
             // IMPORTANT: Replace this URL with the raw URL to your organizations.json file on GitHub
-            const organizationsDataURL = "https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/organizations.json";
+            const organizationsDataURL = "https://raw.githubusercontent.com/antifasc-nash/volunteer-match/main/organizations.json";
             
             try {
                 // --- Step 1: Submit data to Formspree
@@ -236,7 +236,7 @@
                 if (interestsInput.includes('immigrant') || interestsInput.includes('refugee') || interestsInput.includes('immigration') || interestsInput.includes('ICE') || interestsInput.includes('deportation') || interestsInput.includes('hispanic') || interestsInput.includes('Spanish') || interestsInput.includes('human rights') || interestsInput.includes('deport') || interestsInput.includes('migrant')) volunteerTags.push('immigrant_rights');
                 if (interestsInput.includes('racial') || interestsInput.includes('racism') || interestsInput.includes('equity') || interestsInput.includes('discrimination') || interestsInput.includes('police') || interestsInput.includes('race')) volunteerTags.push('racial_justice');
                 if (interestsInput.includes('health') || interestsInput.includes('medical') || interestsInput.includes('hospital') || interestsInput.includes('healthcare') || interestsInput.includes('doctor') || interestsInput.includes('health center') || interestsInput.includes('healthy') || interestsInput.includes('medicine')) volunteerTags.push('healthcare');
-                if (interestsInput.includes('electoral') || interestsInput.includes('vote') || interestsInput.includes('District 7') || interestsInput.includes('politics') || interestsInput.includes('politician') || interestsInput.includes('campaign') || interestsInput.includes('election') || interestsInput.includes('canvass') || interestsInput.includes('Congress') || interestsInput.includes('legislator') || interestsInput.includes('legislation') || interestsInput.includes('candidate')) volunteerTags.push('canvassing_electoral');
+                if (interestsInput.includes('electoral') || interestsInput.includes('vote') || interestsInput.includes('District 7') || interestsInput.includes('politics') || interestsInput.includes('politician') || interestsInput.includes('campaign') || interestsInput.includes('election') || interestsInput.includes('canvass') || interestsInput.includes('Congress') || interestsInput.includes('legislator') || interestsInput.includes('legislation') || interestsInput.includes('candidate') || interestsInput.includes('political')) volunteerTags.push('canvassing_electoral');
                 if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organiazing')) volunteerTags.push('labor_organizing');
                 if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('housing_justice');
                 if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('palestine');
@@ -280,4 +280,5 @@
     </script>
 </body>
 </html>
+
 
