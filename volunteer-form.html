@@ -216,6 +216,7 @@
             if (interestsInput.includes('electoral') || interestsInput.includes('vote') || interestsInput.includes('District 7') || interestsInput.includes('politics') || interestsInput.includes('politician') || interestsInput.includes('campaign') || interestsInput.includes('election') || interestsInput.includes('canvass') || interestsInput.includes('Congress') || interestsInput.includes('legislator') || interestsInput.includes('legislation') || interestsInput.includes('candidate')) volunteerTags.push('canvassing_electoral');
             if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organiazing')) volunteerTags.push('labor_organizing');
             if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('housing_justice');
+            if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('palestine');
             
             // Fetch organizations data from the JSON file
             const url = 'https://raw.githubusercontent.com/antifasc-nash/volunteer-match/main/organizations.json'; // CHANGE THIS URL
@@ -264,4 +265,5 @@
     </script>
 </body>
 </html>
+
 
