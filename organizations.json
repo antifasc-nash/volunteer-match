@@ -4,42 +4,42 @@
     "email": "thorpe.ethan11@gmail.com",
     "phone": null,
     "website": "https://www.eastnashtivists.org/",
-    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building", "Healthcare"]
+    "tags": ["canvassing_electoral", "Event_Partner", "Community_Building", "Healthcare"]
   },
   {
     "name": "Dem Party of Davidson County",
     "email": "info@davidsondemocrats.org",
     "phone": null,
     "website": "https://www.mobilize.us/?org_ids=38117",
-    "tags": ["Canvassing/Electoral", "Event_Partner"]
+    "tags": ["canvassing_electoral", "Event_Partner"]
   },
   {
     "name": "Dem Party of Williamson County",
     "email": "contact@wcdptn.org",
     "phone": "615-622-3250",
     "website": "https://www.wcdptn.org/",
-    "tags": ["Canvassing/Electoral", "Event_Partner"]
+    "tags": ["canvassing_electoral", "Event_Partner"]
   },
   {
     "name": "Dem Party of Wison County",
     "email": "contact@wilsoncountydemocrats.org",
     "phone": "615-549-6220",
     "website": "https://www.wilsoncountydemocrats.org/",
-    "tags": ["Canvassing/Electoral", "Event_Partner"]
+    "tags": ["canvassing_electoral", "Event_Partner"]
   },
   {
     "name": "Indivisible-07",
     "email": "Indivisibletn7@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#7th",
-    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
+    "tags": ["canvassing_electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "Indivisible Murfreesboro",
     "email": "Murfreesboroindivisible@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#murfreesboro",
-    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
+    "tags": ["canvassing_electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "TN Advocates for Planned Parenthood",
@@ -165,7 +165,7 @@
     "email": "nashvilleindivisible@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#Davidson",
-    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
+    "tags": ["canvassing_electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "TN Immigrant and Refugee Rights Council",
@@ -263,14 +263,14 @@
     "email": "info@tn4all.org",
     "phone": null,
     "website": "https://www.tn4all.org/",
-    "tags": ["Mutual_Aid", "Labor_Organizing", "Economic_Justice", "Event_Partner", "Canvassing/Electoral"]
+    "tags": ["Mutual_Aid", "Labor_Organizing", "Economic_Justice", "Event_Partner", "canvassing_electoral"]
   },
   {
     "name": "Free Hearts",
     "email": null,
     "phone": "(615) 745-1117",
     "website": "https://freeheartsorg.com/get-involved/",
-    "tags": ["Canvassing/Electoral", "Community_Building", "Racial_Justice", "Economic_Justice", "Mutual_Aid", "Criminal_Justice"]
+    "tags": ["canvassing_electoral", "Community_Building", "Racial_Justice", "Economic_Justice", "Mutual_Aid", "Criminal_Justice"]
   },
   {
     "name": "Rodney's Village",
