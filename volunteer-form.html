@@ -6,7 +6,7 @@
     <title>Connect with Local Organizations - UVOTN</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
@@ -23,11 +23,12 @@
             margin-bottom: 30px;
         }
         .header h1 {
-            color: #2c3e50;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #002e7b;
             margin-bottom: 10px;
         }
         .header p {
-            color: #7f8c8d;
+            color: #ba153f;
             font-size: 18px;
         }
         .form-group {
@@ -37,7 +38,7 @@
             display: block;
             margin-bottom: 8px;
             font-weight: 600;
-            color: #34495e;
+            color: #002e7b;
         }
         input[type="text"],
         input[type="email"],
@@ -94,8 +95,15 @@
         }
         .org-name {
             font-weight: bold;
-            color: #2c3e50;
+            color: #002e7b;
             font-size: 1.2em;
+        }
+        .org-name a {
+            color: #002e7b;
+            text-decoration: none;
+        }
+        .org-name a:hover {
+            text-decoration: underline;
         }
         .org-tags {
             font-style: italic;
@@ -246,8 +254,7 @@
                         const orgCard = document.createElement('div');
                         orgCard.className = 'org-card';
                         orgCard.innerHTML = `
-                            <div class="org-name">${org.name}</div>
-                            <div class="org-tags">Tags: ${org.tags.join(', ')}</div>
+                            <div class="org-name"><a href="${org.website}" target="_blank" rel="noopener noreferrer">${org.name}</a></div>
                             <div class="org-contact">Contact: ${org.email || org.phone || 'N/A'}</div>
                         `;
                         orgList.appendChild(orgCard);
