@@ -147,12 +147,12 @@
             </div>
             
             <div class="form-group">
-                <label for="interests">What are your interests? (e.g., environmental justice, racial equity, food access)</label>
+                <label for="interests">What are your interests? (e.g., environmental justice, electoral politics, food access)</label>
                 <textarea id="interests" name="interests" rows="4" required></textarea>
             </div>
             
             <div class="form-group">
-                <label for="skills">What skills can you offer? (e.g., event planning, graphic design, community organizing)</label>
+                <label for="skills">What skills and interests do you have that you would like to offer? (e.g., event planning, graphic design, community organizing)</label>
                 <textarea id="skills" name="skills" rows="4"></textarea>
             </div>
             
@@ -231,6 +231,7 @@
                 if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organiazing')) volunteerTags.push('labor_organizing');
                 if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('housing_justice');
                 if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('palestine');
+                if (interestsInput.includes('female') || interestsInput.includes('women') || interestsInput.includes('girls') || interestsInput.includes('gender')) volunteerTags.push('female_empowerment');
                 
                 const response = await fetch(organizationsDataURL);
                 const organizations = await response.json();
@@ -271,6 +272,7 @@
     </script>
 </body>
 </html>
+
 
 
 
