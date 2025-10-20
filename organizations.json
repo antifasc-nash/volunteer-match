@@ -4,251 +4,328 @@
     "email": "thorpe.ethan11@gmail.com",
     "phone": null,
     "website": "https://www.eastnashtivists.org/",
-    "tags": ["canvassing_electoral", "event_partner", "community_building", "healthcare"]
+    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building", "Healthcare"]
   },
   {
     "name": "Dem Party of Davidson County",
     "email": "info@davidsondemocrats.org",
     "phone": null,
     "website": "https://www.mobilize.us/?org_ids=38117",
-    "tags": ["canvassing_electoral", "event_partner"]
+    "tags": ["Canvassing/Electoral", "Event_Partner"]
   },
   {
     "name": "Dem Party of Williamson County",
     "email": "contact@wcdptn.org",
     "phone": "615-622-3250",
     "website": "https://www.wcdptn.org/",
-    "tags": ["canvassing_electoral", "event_partner"]
+    "tags": ["Canvassing/Electoral", "Event_Partner"]
   },
   {
     "name": "Dem Party of Wison County",
     "email": "contact@wilsoncountydemocrats.org",
     "phone": "615-549-6220",
     "website": "https://www.wilsoncountydemocrats.org/",
-    "tags": ["canvassing_electoral", "event_partner"]
+    "tags": ["Canvassing/Electoral", "Event_Partner"]
   },
   {
     "name": "Indivisible-07",
     "email": "Indivisibletn7@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#7th",
-    "tags": ["canvassing_electoral", "event_partner", "community_building"]
+    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "Indivisible Murfreesboro",
     "email": "Murfreesboroindivisible@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#murfreesboro",
-    "tags": ["canvassing_electoral", "event_partner", "community_building"]
+    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "TN Advocates for Planned Parenthood",
     "email": null,
     "phone": null,
     "website": "https://www.mobilize.us/tappactioncouncils/event/748396/",
-    "tags": ["event_partner", "healthcare", "childrens'_rights"]
+    "tags": ["Event_Partner", "Healthcare", "Childrens'_Rights"]
   },
   {
     "name": "Fight for All Nashville",
     "email": "thorpe.ethan11@gmail.com",
     "phone": null,
     "website": "https://www.instagram.com/fightforallnashville/",
-    "tags": ["event_partner", "community_building", "healthcare"]
+    "tags": ["Event_Partner", "Community_Building", "Healthcare"]
   },
   {
     "name": "The Equity Alliance",
     "email": "info@theequityalliance.org",
     "phone": "(615) 492-0061",
     "website": "https://theequityalliance.org/",
-    "tags": ["event_partner", "community_building", "racial_justice", "housing_justice", "economic_justice"]
+    "tags": ["Event_Partner", "Community_Building", "Racial_Justice", "Housing_Justice", "Economic_Justice"]
   },
   {
     "name": "Stand Up Nashville",
     "email": "info@standupnashville.org",
     "phone": "(615) 200-0264",
     "website": "https://standupnashville.org/",
-    "tags": ["event_partner", "community_building", "economic_justice", "housing_justice"]
+    "tags": ["Event_Partner", "Community_Building", "Economic_Justice", "Housing_Justice"]
   },
   {
     "name": "Good Trouble Lives On",
     "email": "info@goodtroubleliveson.org",
     "phone": null,
     "website": "https://goodtroubleliveson.org/",
-    "tags": ["event_partner", "community_building"]
+    "tags": ["Event_Partner", "Community_Building"]
   },
   {
     "name": "CASA",
     "email": "casa@casanashville.org",
     "phone": "(615) 425-2383",
     "website": "https://casanashville.org/",
-    "tags": ["immigrant_rights", "mutual_aid", "childrens'_rights", "labor_organizing"]
+    "tags": ["Immigrant_Rights", "Mutual_Aid", "Childrens'_Rights", "Labor_Organizing"]
   },
   {
     "name": "Nashville International Center for Empowerment",
     "email": null,
     "phone": "(615) 315-9681",
     "website": "https://www.empowernashville.org/volunteer/",
-    "tags": ["community_building", "immigrant_rights", "mutual_aid", "childrens'_rights"]
+    "tags": ["Community_Building", "Immigrant_Rights", "Mutual_Aid", "Childrens'_Rights"]
   },
   {
     "name": "Middle TN Christians for Justice in Palestine",
     "email": null,
     "phone": null,
     "website": "https://linktr.ee/mtc4jp",
-    "tags": ["event_partner", "palestine"]
+    "tags": ["Event_Partner", "Palestine"]
   },
   {
     "name": "Third Act TN",
     "email": "tennessee@thirdact.org",
     "phone": null,
     "website": "https://thirdact.org/tennessee/",
-    "tags": ["event_partner", "environmental_justice"]
+    "tags": ["Event_Partner", "Environmental_Justice"]
   },
   {
     "name": "The ReMIX TN",
     "email": null,
     "phone": null,
     "website": "https://linktr.ee/theremix_tn",
-    "tags": ["community_building", "racial_justice", "immigrant_rights", "mutual_aid", "food_access"]
+    "tags": ["Community_Building", "Racial_Justice", "Immigrant_Rights", "Mutual_Aid", "Food_Access"]
   },
   {
     "name": "A Luta Sigue",
     "email": "volunteer@alutasigue.org",
     "phone": null,
     "website": "https://www.alutasigue.org/",
-    "tags": ["event_partner", "community_building", "racial_justice", "economic_justice", "immigrant_rights", "labor_organizing", "mutual_aid"]
+    "tags": ["Event_Partner", "Community_Building", "Racial_Justice", "Economic_Justice", "Immigrant_Rights", "Labor_Organizing", "Mutual_Aid"]
   },
   {
     "name": "Poder Popular",
     "email": null,
     "phone": null,
     "website": "https://www.alutasigue.org/poder-popular",
-    "tags": ["community_building", "racial_justice", "economic_justice", "immigrant_rights", "labor_organizing", "mutual_aid"]
+    "tags": ["Community_Building", "Racial_Justice", "Economic_Justice", "Immigrant_Rights", "Labor_Organizing", "Mutual_Aid"]
   },
   {
     "name": "Second Harvest Food Bank",
     "email": "info@secondharvestmidtn.org",
     "phone": "(615) 329-3491",
     "website": "https://www.secondharvestmidtn.org/",
-    "tags": ["food_access", "mutual_aid"]
+    "tags": ["Food_Access", "Mutual_Aid"]
   },
   {
     "name": "Urban Green Lab",
     "email": "connect@urbangreenlab.org",
     "phone": "(615) 442-7072",
     "website": "https://urbangreenlab.org/",
-    "tags": ["community_building", "environmental_justice"]
+    "tags": ["Community_Building", "Environmental_Justice"]
   },
   {
     "name": "Tennessee Environmental Council",
     "email": "tec@tectn.org",
     "phone": "(615) 248-6500",
     "website": "https://www.tectn.org/getinvolved.html",
-    "tags": ["community_building", "environmental_justice"]
+    "tags": ["Community_Building", "Environmental_Justice"]
   },
   {
     "name": "Land Trust for Tennessee",
     "email": null,
     "phone": "(615) 244-5263",
     "website": "https://www.landtrusttn.org/",
-    "tags": ["community_building", "environmental_justice"]
+    "tags": ["Community_Building", "Environmental_Justice"]
   },
   {
     "name": "The Nature Conservancy TN",
     "email": "tn@tnc.org",
     "phone": "(615) 383-9909",
     "website": "https://www.nature.org/en-us/about-us/where-we-work/united-states/tennessee/?vu=r.v_tennessee.local.na.tn",
-    "tags": ["community_building", "environmental_justice"]
+    "tags": ["Community_Building", "Environmental_Justice"]
   },
   {
     "name": "Nashville Indivisible",
     "email": "nashvilleindivisible@gmail.com",
     "phone": null,
     "website": "https://indivisibletn.org/connect-with-a-group/#Davidson",
-    "tags": ["canvassing_electoral", "event_partner", "community_building"]
+    "tags": ["Canvassing/Electoral", "Event_Partner", "Community_Building"]
   },
   {
     "name": "TN Immigrant and Refugee Rights Council",
     "email": null,
     "phone": "(615) 833-0384",
     "website": "https://www.tnimmigrant.org/volunteer",
-    "tags": ["event_partner", "community_building", "racial_justice", "immigrant_rights"]
+    "tags": ["Event_Partner", "Community_Building", "Racial_Justice", "Immigrant_Rights"]
   },
   {
     "name": "The Arc of Davidson County and Middle TN",
     "email": null,
     "phone": "(615) 321-5699",
     "website": "https://www.arcdc.org/getinvolved",
-    "tags": ["healthcare", "disability_rights"]
+    "tags": ["Healthcare", "Disability_Rights"]
   },
   {
     "name": "Community Resource Center",
     "email": "hello@crcmidtn.org",
     "phone": "(615) 291-6688",
     "website": "https://crcmidtn.org/volunteer/",
-    "tags": ["healthcare", "community_building", "mutual_aid"]
+    "tags": ["Healthcare", "Community_Building", "Mutual_Aid"]
   },
   {
     "name": "NOAH",
     "email": "info@noahtn.org",
     "phone": "(615) 636-7197",
     "website": "https://noahtn.org/",
-    "tags": ["event_partner", "community_building", "economic_justice", "labor_organizing", "interfaith"]
+    "tags": ["Event_Partner", "Community_Building", "Economic_Justice", "Labor_Organizing", "Interfaith"]
   },
   {
     "name": "Central Labor Council of Middle TN",
     "email": "thorpe.ethan11@gmail.com",
     "phone": "615-519-7705",
     "website": "https://nashvilleclc.org/",
-    "tags": ["event_partner", "labor_organizing"]
+    "tags": ["Event_Partner", "Labor_Organizing"]
   },
   {
     "name": "TN Justice Center",
     "email": null,
     "phone": "(615) 255-0331",
     "website": "https://www.tnjustice.org/",
-    "tags": ["event_partner", "healthcare", "community_building", "economic_justice", "immigrant_rights", "food_access", "childrens'_rights"]
+    "tags": ["Event_Partner", "Healthcare", "Community_Building", "Economic_Justice", "Immigrant_Rights", "Food_Access", "Childrens'_Rights"]
   },
   {
     "name": "MigraWatch",
     "email": null,
     "phone": "(615) 933-8409",
     "website": "https://mailchi.mp/a9453219e3f0/training-sign-up",
-    "tags": ["event_partner", "immigrant_rights"]
+    "tags": ["Event_Partner", "Immigrant_Rights"]
   },
   {
     "name": "First Unitarian Universalist Church of Nashville",
     "email": "administrator@firstuunash.org",
     "phone": "(615) 383-5760",
     "website": "https://www.firstuunash.org",
-    "tags": ["event_partner", "community_building", "interfaith"]
+    "tags": ["Event_Partner", "Community_Building", "Interfaith"]
   },
   {
     "name": "Glencliff United Methodist Church",
     "email": null,
     "phone": "(615) 833-5010",
     "website": "https://glencliffumc.org",
-    "tags": ["event_partner", "community_building", "interfaith"]
+    "tags": ["Event_Partner", "Community_Building", "Interfaith"]
   },
   {
     "name": "The Store",
     "email": "info@thestore.org",
     "phone": "(615) 460-8331",
     "website": "https://thestore.org/volunteer",
-    "tags": ["mutual_aid", "food_access"]
+    "tags": ["Mutual_Aid", "Food_Access"]
   },
   {
     "name": "Martha O'Bryan Center",
     "email": "development@marthaobryan.org",
     "phone": "615-254-1791",
     "website": "https://marthaobryan.org/get-involved/volunteer/",
-    "tags": ["community_building", "economic_justice", "interfaith"]
+    "tags": ["Community_Building", "Economic_Justice", "Interfaith"]
   },
   {
     "name": "ThriftSmart",
     "email": null,
     "phone": "(615) 833-8200",
     "website": "https://thriftsmart.com/volunteer/",
-    "tags": ["mutual_aid", "economic_justice", "interfaith"]
+    "tags": ["Mutual_Aid", "Economic_Justice", "Interfaith"]
+  },
+  {
+    "name": "American Association of University Professors",
+    "email": "thorpe.ethan11@gmail.com",
+    "phone": "615-519-7705",
+    "website": null,
+    "tags": ["Mutual_Aid", "Community_Building", "Labor_Organizing"]
+  },
+  {
+    "name": "Tennessee for All",
+    "email": "info@tn4all.org",
+    "phone": null,
+    "website": "https://www.tn4all.org/",
+    "tags": ["Mutual_Aid", "Labor_Organizing", "Economic_Justice", "Event_Partner", "Canvassing/Electoral"]
+  },
+  {
+    "name": "Free Hearts",
+    "email": null,
+    "phone": "(615) 745-1117",
+    "website": "https://freeheartsorg.com/get-involved/",
+    "tags": ["Canvassing/Electoral", "Community_Building", "Racial_Justice", "Economic_Justice", "Mutual_Aid", "Criminal_Justice"]
+  },
+  {
+    "name": "Rodney's Village",
+    "email": null,
+    "phone": null,
+    "website": "https://rodneysvillage.org/contact.htm",
+    "tags": ["Mutual_Aid", "Economic_Justice", "Community_Building", "Childrens'_Rights"]
+  },
+  {
+    "name": "Dream Streets",
+    "email": "info@dreamstreetstn.com",
+    "phone": "(615) 942-5559",
+    "website": "https://dreamstreetstn.com/serve",
+    "tags": ["Mutual_Aid", "Food_Access", "Economic_Justice", "Childrens'_Rights"]
+  },
+  {
+    "name": "Black Mental Health Village",
+    "email": "info@bmhv.org",
+    "phone": "615-669-7015",
+    "website": "https://www.bmhv.org/get-involved",
+    "tags": ["Healthcare", "Racial_Justice", "Disability_Rights"]
+  },
+  {
+    "name": "New Beginnings",
+    "email": "info@tnbcenter.org",
+    "phone": "615-432-2579",
+    "website": "https://www.thenewbeginningscenter.org/donate",
+    "tags": ["Healthcare", "Community_Building", "Female_Empowerment"]
+  },
+  {
+    "name": "Nashville Diaper Connection",
+    "email": "info@nashvillediaperconnection.org",
+    "phone": "(615) 915-3089",
+    "website": "https://www.nashvillediaperconnection.org/get-involved-1-1",
+    "tags": ["Mutual_Aid", "Healthcare", "Economic_Justice", "Childrens'_Rights"]
+  },
+  {
+    "name": "Casa Azafran",
+    "email": null,
+    "phone": "615-270-9252",
+    "website": "https://www.conexionamericas.org/who-we-are/ca/",
+    "tags": ["Mutual_Aid", "Healthcare", "Economic_Justice", "Childrens'_Rights", "Event_Partner", "Community_Building", "Racial_Justice", "Housing_Justice", "Immigrant_Rights", "Criminal_Justice", "Food_Access"]
+  },
+  {
+    "name": "Conexión Americas",
+    "email": "info@conexionamericas.org",
+    "phone": "615-270-9252",
+    "website": "https://conexionamericas.nationbuilder.com/volunteer_calendar",
+    "tags": ["Mutual_Aid", "Healthcare", "Economic_Justice", "Childrens'_Rights"]
+  },
+  {
+    "name": "The FIND Design",
+    "email": "smatthews@thefinddesign.org",
+    "phone": "615-362-1377",
+    "website": "https://www.thefinddesign.org",
+    "tags": ["Community_Building", "Racial_Justice", "Economic_Justice", "Childrens'_Rights"]
   }
 ]
