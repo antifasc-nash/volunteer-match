@@ -199,16 +199,13 @@
         document.getElementById('volunteerForm').addEventListener('submit', async function(e) {
             e.preventDefault();
 
-            // Show loading indicator and hide previous results
             document.getElementById('results').style.display = 'none';
             document.getElementById('civilNotice').style.display = 'none';
             document.getElementById('loading').style.display = 'block';
             
-            // IMPORTANT: Replace this URL with the raw URL to your organizations.json file on GitHub
             const organizationsDataURL = "https://raw.githubusercontent.com/antifasc-nash/volunteer-match/main/organizations.json";
             
             try {
-                // --- Step 1: Submit data to Formspree
                 const form = e.target;
                 const formData = new FormData(form);
                 await fetch(form.action, {
@@ -219,19 +216,19 @@
                     }
                 });
 
-                // --- Step 2: Fetch and display organization matches
                 const interestsInput = document.getElementById('interests').value.toLowerCase();
                 const volunteerTags = [];
-                if (interestsInput.includes('environment') || interestsInput.includes('climate') || interestsInput.includes('conservation')  || interestsInput.includes('wildlife') || interestsInput.includes('sustainability')) volunteerTags.push('environmental_justice');
-                if (interestsInput.includes('food') || interestsInput.includes('hunger') || interestsInput.includes('eat') || interestsInput.includes('starvation') || interestsInput.includes('healthy')) volunteerTags.push('food_access');
-                if (interestsInput.includes('immigrant') || interestsInput.includes('refugee') || interestsInput.includes('immigration') || interestsInput.includes('ICE') || interestsInput.includes('deportation') || interestsInput.includes('hispanic') || interestsInput.includes('Spanish') || interestsInput.includes('human rights') || interestsInput.includes('deport') || interestsInput.includes('migrant')) volunteerTags.push('immigrant_rights');
-                if (interestsInput.includes('racial') || interestsInput.includes('racism') || interestsInput.includes('equity') || interestsInput.includes('discrimination') || interestsInput.includes('police') || interestsInput.includes('race')) volunteerTags.push('racial_justice');
-                if (interestsInput.includes('health') || interestsInput.includes('medical') || interestsInput.includes('hospital') || interestsInput.includes('healthcare') || interestsInput.includes('doctor') || interestsInput.includes('health center') || interestsInput.includes('healthy') || interestsInput.includes('medicine')) volunteerTags.push('healthcare');
+                
+                if (interestsInput.includes('environment') || interestsInput.includes('climate') || interestsInput.includes('conservation') || interestsInput.includes('wildlife') || interestsInput.includes('sustainability')) volunteerTags.push('Environmental_Justice');
+                if (interestsInput.includes('food') || interestsInput.includes('hunger') || interestsInput.includes('eat') || interestsInput.includes('starvation') || interestsInput.includes('healthy')) volunteerTags.push('Food_Access');
+                if (interestsInput.includes('immigrant') || interestsInput.includes('refugee') || interestsInput.includes('immigration') || interestsInput.includes('ICE') || interestsInput.includes('deportation') || interestsInput.includes('hispanic') || interestsInput.includes('Spanish') || interestsInput.includes('human rights') || interestsInput.includes('deport') || interestsInput.includes('migrant')) volunteerTags.push('Immigrant_Rights');
+                if (interestsInput.includes('racial') || interestsInput.includes('racism') || interestsInput.includes('equity') || interestsInput.includes('discrimination') || interestsInput.includes('police') || interestsInput.includes('race')) volunteerTags.push('Racial_Justice');
+                if (interestsInput.includes('health') || interestsInput.includes('medical') || interestsInput.includes('hospital') || interestsInput.includes('healthcare') || interestsInput.includes('doctor') || interestsInput.includes('health center') || interestsInput.includes('medicine')) volunteerTags.push('Healthcare');
                 if (interestsInput.includes('electoral') || interestsInput.includes('vote') || interestsInput.includes('District 7') || interestsInput.includes('politics') || interestsInput.includes('politician') || interestsInput.includes('campaign') || interestsInput.includes('election') || interestsInput.includes('canvass') || interestsInput.includes('Congress') || interestsInput.includes('legislator') || interestsInput.includes('legislation') || interestsInput.includes('candidate') || interestsInput.includes('political')) volunteerTags.push('canvassing_electoral');
-                if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organiazing')) volunteerTags.push('labor_organizing');
-                if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('housing_justice');
-                if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('palestine');
-                if (interestsInput.includes('female') || interestsInput.includes('women') || interestsInput.includes('girls') || interestsInput.includes('gender')) volunteerTags.push('female_empowerment');
+                if (interestsInput.includes('labor') || interestsInput.includes('worker') || interestsInput.includes('AFL-CIO') || interestsInput.includes('working') || interestsInput.includes('blue collar') || interestsInput.includes('organizing')) volunteerTags.push('Labor_Organizing');
+                if (interestsInput.includes('housing') || interestsInput.includes('homeless') || interestsInput.includes('home') || interestsInput.includes('streets')) volunteerTags.push('Housing_Justice');
+                if (interestsInput.includes('palestine') || interestsInput.includes('palestinian') || interestsInput.includes('liberation') || interestsInput.includes('gaza')) volunteerTags.push('Palestine');
+                if (interestsInput.includes('female') || interestsInput.includes('women') || interestsInput.includes('girls') || interestsInput.includes('gender')) volunteerTags.push('Female_Empowerment');
                 
                 const response = await fetch(organizationsDataURL);
                 const organizations = await response.json();
@@ -272,7 +269,3 @@
     </script>
 </body>
 </html>
-
-
-
-
