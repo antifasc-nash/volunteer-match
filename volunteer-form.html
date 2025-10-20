@@ -93,6 +93,42 @@
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
+        .special-card {
+            background: #fff3cd;
+            border: 2px solid #ba153f;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        .special-card h3 {
+            color: #ba153f;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 1.4em;
+            font-weight: bold;
+        }
+        .special-card p {
+            color: #002e7b;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        .special-card .link-item {
+            margin-bottom: 10px;
+        }
+        .special-card a {
+            color: #002e7b;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .special-card a:hover {
+            text-decoration: underline;
+        }
+        .special-card .contact {
+            color: #34495e;
+            font-size: 0.95em;
+            margin-left: 5px;
+        }
         .org-name {
             font-weight: bold;
             color: #002e7b;
@@ -250,6 +286,27 @@
                 if (matches.length > 0) {
                     const orgList = document.getElementById('organizationList');
                     orgList.innerHTML = '';
+                    
+                    // Add special District 7 card at the top
+                    const specialCard = document.createElement('div');
+                    specialCard.className = 'special-card';
+                    specialCard.innerHTML = `
+                        <h3>BREAKING: Help Us Flip District 7!</h3>
+                        <p>There is a special election coming up on December 2, 2025. This is a chance to be part of a historic campaign to show the entire country that TENNESSEE WILL STAND UP.</p>
+                        <div class="link-item">
+                            <a href="https://www.mobilize.us/aftynforcongress/" target="_blank" rel="noopener noreferrer">Get involved with the campaign directly</a>
+                            <span class="contact">(team@aftynbehn.com)</span>
+                        </div>
+                        <div class="link-item">
+                            <a href="https://www.mobilize.us/?q=canvass" target="_blank" rel="noopener noreferrer">Get involved with grassroots supporters</a>
+                        </div>
+                        <div class="link-item">
+                            <a href="mailto:thorpe.ethan11@gmail.com">Find other ways to get involved</a>
+                            <span class="contact">(thorpe.ethan11@gmail.com)</span>
+                        </div>
+                    `;
+                    orgList.appendChild(specialCard);
+                    
                     matches.forEach(org => {
                         const orgCard = document.createElement('div');
                         orgCard.className = 'org-card';
